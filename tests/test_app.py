@@ -4,7 +4,7 @@ import os
 import pytest
 
 # Añade el directorio actual (donde está app.py) al path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(_file_), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from app import app
 
