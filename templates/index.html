@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>VitalApp - Salud Vital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>VitalApp</h1>
+    <p>Bienvenido a tu clínica en línea</p>
+  </header>
+
+  <main>
+    <!-- Formulario para agendar citas -->
+    <section class="card">
+      <h2>Agendar Cita</h2>
+      <form>
+        <input type="text" placeholder="Nombre del paciente" required>
+        <input type="date" required>
+        <select required>
+          <option value="">Tipo de consulta</option>
+          <option>General</option>
+          <option>Pediatría</option>
+          <option>Psicología</option>
+        </select>
+        <button type="submit">Agendar</button>
+      </form>
+    </section>
+
+    <!-- Resultados médicos -->
+    <section class="card">
+      <h2>Resultados Médicos</h2>
+      <ul>
+        <li><strong>15/03/2025:</strong> Examen de sangre <button>Ver</button></li>
+        <li><strong>12/02/2025:</strong> Rayos X <button>Ver</button></li>
+      </ul>
+    </section>
+
+    <!-- Alertas de salud -->
+    <section class="card">
+      <h2>Alertas de Salud</h2>
+      <ul>
+        <li>💊 Tómate el medicamento a las 8:00 am</li>
+        <li>🩺 Tu próximo chequeo anual es el 10/06/2025</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Salud Vital</p>
+  </footer>
+</body>
+</html>

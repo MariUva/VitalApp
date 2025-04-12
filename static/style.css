@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    color: #333;
+  }
+  
+  header {
+    background: #2e86de;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+  }
+  
+  .card {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  form input, form select, form button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1em;
+  }
+  
+  form button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #27ae60;
+  }
+  
+  footer {
+    background: #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.9em;
+  }
+  
