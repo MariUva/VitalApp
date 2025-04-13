@@ -1,6 +1,6 @@
-from flask import Flask
+from flask import Flask, render_template
 from prometheus_client import start_http_server, Counter
-import time
+import threading
 
 # Crear la aplicación de Flask
 app = Flask(__name__)
@@ -9,14 +9,18 @@ app = Flask(__name__)
 REQUESTS = Counter('http_requests_total', 'Total HTTP Requests', ['method', 'endpoint'])
 
 @app.route('/')
-def hello():
-    # Incrementar el contador cada vez que se haga una solicitud al endpoint
+def index():
+    # Incrementar el contador Prometheus para cada solicitud GET a "/"
     REQUESTS.labels(method='GET', endpoint='/').inc()
-    return "Hello, World!"
+    return render_template('index.html')
+
+def start_prometheus_server():
+    # Ejecuta el servidor de métricas Prometheus en un hilo separado
+    start_http_server(8000)
 
 if __name__ == '__main__':
-    # Iniciar un servidor HTTP para servir las métricas en el puerto 8000
-    start_http_server(5000)
-    
-    # Iniciar la aplicación Flask en el puerto 5000
+    # Iniciar el servidor Prometheus en segundo plano
+    threading.Thread(target=start_prometheus_server).start()
+
+    # Ejecutar la aplicación Flask
     app.run(host='0.0.0.0', port=5000)
